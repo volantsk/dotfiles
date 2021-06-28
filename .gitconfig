@@ -1,0 +1,43 @@
+[user]
+	name = volantsk
+	email = volantsk@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+[branch]
+	autosetuprebase = always
+[alias]
+	st = status -s
+	d = difftool
+	show-graph = log --graph --abbrev-commit --pretty=oneline
+    ca = clean -fdx
+	ci = commit
+	co = checkout
+	br = branch
+	g = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	undo = reset --soft HEAD^
+    logfec1 = log --stat --graph --decorate --oneline 
+    logfec2 = log --stat --graph --decorate --oneline --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[core]
+	editor = vim
+	eol = lf
+	autocrlf = input
+	safecrlf = true
+[push]
+	default = current
+[credential]
+	helper = store
+[diff]
+	tool = meld
+[merge]
+	tool = p4merge
+[mergetool "p4merge"]
+	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
